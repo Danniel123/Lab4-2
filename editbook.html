@@ -1,0 +1,26 @@
+{% csrf_token %}
+<html>
+<head>
+<title>editbook</title>
+<style>
+	html,body{text-align:center;margin:0px auto;}
+</style>
+</head> 
+
+<h1 align="center">edit informations</h1>
+<hr />
+<body bgcolor="#ffff99">
+
+	<h2><form action="" method="post" >
+	<p>ISBN:<input type="text" name="ISBN" value= {{books.ISBN}} ></p>
+	<p>Title:<input type="text" name="Title" value="{{books.Title}}"></p>
+	<p>AuthorID:<input type="text" name="AuthorID" value="{{books.AuthorID}}"></p>
+	<p>Publisher:<input type="text" name="Publisher" value="{{books.Publisher}}"></p>
+	<p>PublishDate:<input type="date" name="PublishDate" value= "2015/11/3" ></p>
+	<p>Price:<input type="text" name="Price" value="{{books.Price}}"></p>
+     <input type="submit" value="submit">
+    </form></h2>
+	
+ </body>
+
+ </html>

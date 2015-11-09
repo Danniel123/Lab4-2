@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Search Result</title>
+<style>
+	html,body{text-align:center;margin:0px auto;}
+</style>
+</head> 
+<h1 align="center">Search Result</h1>
+<hr />
+<body bgcolor="#ffff99" >
+<p>The Author who you search for is : <strong>{{ query }}</strong></p>
+{% if authors %}
+    <p>Found {{ books|length }} book{{ authors|pluralize }}.</p>
+    <ul>
+	{% for book in books %}
+	<li><a href="/details/?ISBN={{ book.ISBN }}">{{ book.Title }}</a></li>
+	{% endfor %}
+    </ul> 
+	<a  href = "/" > <input  type = "button" value= "Re-search!" /> </a>
+{% else %}
+    <p>No Author matched your search criteria.</p>
+	<button type="button">Click Me!</button><a href="/"></a>
+{% endif %}
+
+	

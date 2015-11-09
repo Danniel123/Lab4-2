@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Search</title>
+<style>
+	html,body{text-align:center;margin:0px auto;}
+</style>
+</head> 
+
+<h1 align="center">图书管理系统</h1>
+<hr />
+<body bgcolor="#ffff99">
+    {% if error %}
+        <p style="color: red;" align="center" >This author is not exist .</p>
+    {% endif %}
+    <h2><form action="" method="get" >
+	Author Name：
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form></h2>
+	<a  href = "/addbook" > <input  type = "button" value= "add a book!" /> </a>
+ </body>
+
+ </html>

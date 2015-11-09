@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Book Details</title>
+<style>
+	html,body{text-align:center;margin:0px auto;}
+</style>
+</head> 
+<body bgcolor="#ffff99" >
+    {% if error %}
+        <p style = "color: blue;">Please submit a search term.</p>
+    {% else %}
+		<h1>Book Details</h1>
+
+        <table border=1 align="center" style="color: black">
+             <tr>
+              <th style="color: red">ISBN</th><th>Title</th><th style="color: green">AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+             </tr>
+            {% for book in books %}
+            <tr>
+            <td style="color: red">{{ book.ISBN }}</td>
+            <td>{{ book.Title }}</td>
+			<td style="color: green">{{ book.AuthorID }}</td>
+			<td>{{ book.Publisher }}</td>
+			<td>{{ book.PublishDate }}</td>
+            <td>{{ book.Price }}</td>
+			<td><a href="/delete/?ISBN={{ book.ISBN }}">删除</a></td>
+			<td><a  href = "/editbook/?ISBN={{ book.ISBN }}" >编辑</a></td>
+             </tr>
+            {% endfor %}
+            </table>
+
+			<hr />	<hr />			
+			<h1>Author Details</h1>
+			<table border=1 align="center" style="color: black">
+             <tr>
+              <th style="color: green">AuthorID</th><th>Name</th><th>Age</th><th>Country</th>
+             </tr>
+            {% for author in authors %}
+            <tr>
+            <td style="color: green">{{ author.AuthorID }}</td>
+            <td>{{ author.Name  }}</td>
+			<td>{{ author.Age }}</td>
+			<td>{{ author.Country }}</td>
+			</tr>
+			{% endfor %}
+            </table>
+				<a  href = "/" > <input  type = "button" value= "Re-search!" size="70"/> </a>
+	
+    {% endif %}
+</body>
+<ml>
